@@ -7,6 +7,7 @@ Cursos realizados por mim, nas plataformas:
 * [Codeschool](https://www.codeschool.com/)
 * [Schoolofnet](https://www.schoolofnet.com/)
 * [Caelum](https://www.caelum.com.br)
+* [hackr.io][https://hackr.io/]
 
 Caelum
 ==
