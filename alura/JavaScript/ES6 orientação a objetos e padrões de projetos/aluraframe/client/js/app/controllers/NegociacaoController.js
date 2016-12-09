@@ -6,7 +6,8 @@ class NegociacaoController {
     this._inputData = $('#data');
     this._inputQuantidade = $('#quantidade');
     this._inputValor = $('#valor');
-
+    this._negociacaoService = new NegociacaoService();
+    
     this._negociacoesView = new NegociacoesView($('#negociacoesView'));
 
     this._listaNegociacoes = new Bind(
@@ -26,6 +27,21 @@ class NegociacaoController {
         this._listaNegociacoes.adiciona(this._criaNegociacao());
         this._mensagem.texto = 'Negociação adicionada com sucesso';
         this._limpaFormulario();
+      }
+
+      importaNegociacoes() {
+
+        this._negociacaoService.obterNegociacoesDaSemana((erro, negociacoes) => {
+
+          if(erro) {
+            this._mensagem.texto = erro;
+            return;
+          }
+
+          negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
+
+        });
+
       }
 
       esvazia() {
