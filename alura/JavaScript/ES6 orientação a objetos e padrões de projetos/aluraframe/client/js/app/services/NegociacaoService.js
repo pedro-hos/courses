@@ -1,25 +1,51 @@
 class NegociacaoService {
 
-  obterNegociacoesDaSemana(cb) {
+  constructor() {
 
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'negociacoes/semana');
-    xhr.onreadystatechange = () => {
-      if(xhr.readyState == 4) {
-        if(xhr.status == 200) {
-          let negociacoes =
-          JSON.parse(xhr.responseText)
-          .map(dado => new Negociacao(new Date(dado.data), dado.quantidade, dado.valor));
-
-          cb(null, negociacoes);
-
-        } else {
-          console.log(xhr.responseText);
-          cb('Não foi possível obter as negociações da semana', null);
-        }
-      }
-    }
-
-    xhr.send();
+    this._http = new HttpService();
   }
+
+  obterNegociacoesDaSemana() {
+
+      return this._http
+        .get('negociacoes/semana')
+        .then(negociacoes => {
+          console.log(negociacoes);
+          return negociacoes.map(objeto => new Negociacao(new Date(objeto.data), objeto.quantidade, objeto.valor));
+      })
+        .catch(erro => {
+          console.log(erro);
+          reject('Não foi possível obter as negociações da semana');
+      });
+
+  }
+
+  obterNegociacoesDaSemanaAnterior() {
+
+      return this._http
+        .get('negociacoes/anterior')
+        .then(negociacoes => {
+          console.log(negociacoes);
+          return negociacoes.map(objeto => new Negociacao(new Date(objeto.data), objeto.quantidade, objeto.valor));
+        })
+        .catch(erro => {
+          console.log(erro);
+          reject('Não foi possível obter as negociações da semana anterior');
+        });
+  }
+
+  obterNegociacoesDaSemanaRetrasada() {
+
+      return this._http
+        .get('negociacoes/retrasada')
+        .then(negociacoes => {
+          console.log(negociacoes);
+          return negociacoes.map(objeto => new Negociacao(new Date(objeto.data), objeto.quantidade, objeto.valor));
+        })
+        .catch(erro => {
+          console.log(erro);
+          reject('Não foi possível obter as negociações da semana retrasada');
+        });
+  }
+
 }

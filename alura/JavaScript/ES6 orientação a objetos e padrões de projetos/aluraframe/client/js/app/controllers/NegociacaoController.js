@@ -7,7 +7,7 @@ class NegociacaoController {
     this._inputQuantidade = $('#quantidade');
     this._inputValor = $('#valor');
     this._negociacaoService = new NegociacaoService();
-    
+
     this._negociacoesView = new NegociacoesView($('#negociacoesView'));
 
     this._listaNegociacoes = new Bind(
@@ -31,16 +31,22 @@ class NegociacaoController {
 
       importaNegociacoes() {
 
-        this._negociacaoService.obterNegociacoesDaSemana((erro, negociacoes) => {
+        Promise.all([
+          this._negociacaoService.obterNegociacoesDaSemana(),
+          this._negociacaoService.obterNegociacoesDaSemanaAnterior(),
+          this._negociacaoService.obterNegociacoesDaSemanaRetrasada()
+        ])
+        .then(negociacoesPorPeriodo => {
 
-          if(erro) {
-            this._mensagem.texto = erro;
-            return;
-          }
-
-          negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
-
-        });
+          negociacoesPorPeriodo.reduce((grupoAtual, proximoGrupo) => {
+            return grupoAtual.concat(proximoGrupo);
+          })
+          .forEach(negociacao => {
+            this._listaNegociacoes.adiciona(
+              new Negociacao(new Date(negociacao.data), negociacao.quantidade, negociacao.valor))
+          });
+        })
+        .catch(erro => this._mensagem.texto = erro);
 
       }
 
