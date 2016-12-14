@@ -25,7 +25,7 @@ Alura
 |4| [JavaScript​: Programando na linguagem da web](https://www.alura.com.br/curso-online-a-linguagem-javascript) | x | [Visualizar](https://cursos.alura.com.br/user/pedro-hos/course/a-linguagem-javascript/certificate)|
 |5| [Expressões regulares: Capturando textos de forma mágica](https://www.alura.com.br/curso-online-expressoes-regulares) | x | [Visualizar](https://cursos.alura.com.br/user/pedro-hos/course/expressoes-regulares/certificate)|
 |6| [Curso JavaScript avançado I: ES6, orientação a objetos e padrões de projetos](https://www.alura.com.br/curso-online-javascript-es6-orientacao-a-objetos-parte-1) | x | [Visualizar](https://cursos.alura.com.br/user/pedro-hos/course/javascript-es6-orientacao-a-objetos-parte-1/certificate)|
-|7| [Curso JavaScript Avançado II: ES6, orientação a objetos e padrões de projetos](https://www.alura.com.br/curso-online-javascript-es6-orientacao-a-objetos-parte-2) |  | Visualizar|
+|7| [Curso JavaScript Avançado II: ES6, orientação a objetos e padrões de projetos](https://www.alura.com.br/curso-online-javascript-es6-orientacao-a-objetos-parte-2) | x | [Visualizar](https://cursos.alura.com.br/user/pedro-hos/course/javascript-es6-orientacao-a-objetos-parte-2/certificate)|
 |8| [Curso JavaScript Avançado III: ES6, orientação a objetos e padrões de projetos](https://www.alura.com.br/curso-online-javascript-es6-orientacao-a-objetos-parte-3) |  | Visualizar|
 |9| [Curso Node.js: Inovando com Javascript no backend](https://www.alura.com.br/curso-online-node-js) |  | Visualizar|
 |10| [Curso Node.js e HTTP: desenvolvendo uma API seguindo o estilo REST](https://www.alura.com.br/curso-online-nodejs-avancado) |  | Visualizar|
