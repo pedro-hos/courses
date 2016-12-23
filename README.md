@@ -31,3 +31,9 @@ Alura
 |10| [Curso Node.js e HTTP: desenvolvendo uma API seguindo o estilo REST](https://www.alura.com.br/curso-online-nodejs-avancado) |  | Visualizar|
 |11| [AngularJS: crie webapps poderosas](https://www.alura.com.br/curso-online-angularjs-mvc) |  | Visualizar|
 |12| [Curso MEAN Stack: criando aplicações completas com Javascript](https://www.alura.com.br/curso-online-mean-javascript) |  | Visualizar|
+
+School of Net
+==
+| #  | Curso  | Finalizado  | Certificado |
+| :---:   | :---    | :---:     | :---:       |
+| 1       |[Docker na AWS](https://www.schoolofnet.com/curso-docker-na-aws/)|  | [Visualizar]()|
